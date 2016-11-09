@@ -386,8 +386,7 @@ if (CAN_REPLY && AUTH && TEXT) {
         {
                 if($dnsbl->CheckSpamIP($ipAddress, SPAMVENDOR))
                 {
-                        header('HTTP/1.0 403 Forbidden');
-                        die('You are not allowed to access this file.');
+                        require FORUM_LIB.'error_spam.php';
                 }
         
         }
