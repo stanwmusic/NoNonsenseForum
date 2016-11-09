@@ -68,25 +68,6 @@
         THEME_HTML_ERROR        the HTML message used when a post is corrupt (malformed HTML), in the forum's default lang.
 */
 
-
-// Spam protection by StopForumSpam, just kill connection from spam bots:
-
-require_once 'lib/DNSBL.php';
-
-$dnsbl = new DNSBL();
-
-$checker = 'spamcop';
-$ipAddress = $_SERVER['REMOTE_ADDR'];
-
-if (array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER)) {
-    $ipAddress = array_pop(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']));
-}
-
-if($dnsbl->CheckSpamIP($ipAddress, $checker)){
-	header('HTTP/1.0 403 Forbidden');
-	die('You are not allowed to access this file.');
-}
-
 /* server configuration
    ====================================================================================================================== */
 //default UTF-8 throughout
