@@ -53,5 +53,19 @@
 @define ('SIZE_TITLE',          100);           //post title
 @define ('SIZE_TEXT',           50000);         //post message
 
+// Enable or disable checking IP against blacklists
+@define ('CHECKSPAM',		true);
+
+// Set spam service
+// Possible values are:
+//	all - Check against all 
+//	spamhaus
+//	spamcop
+//	dsbl
+// 	ordb
+//	sorbs
+//	njabl
+@define ('SPAMVENDOR', 		'spamcop');
+
 
 ?>
