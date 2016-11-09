@@ -384,7 +384,7 @@ if (CAN_REPLY && AUTH && TEXT) {
         // check spam
         if(CHECKSPAM == true)
         {
-                if($dnsbl->CheckSpamIP($ipAddress, SPAMVENDOR))
+                if($dnsbl->CheckSpamIP(visitor_ip, SPAMVENDOR))
                 {
                         require FORUM_LIB.'error_spam.php';
                 }
